@@ -13,6 +13,7 @@
 			<input type="hidden" name="userId" value="${webVO.userId}">
 			<input type="hidden" name="userPwd" value="${webVO.userPwd}">
 			<input type="hidden" name="userName" value="${webVO.userName}">
+			<input type="hidden" name="userGender" value="${webVO.userGender}">
 			<input type="hidden" name="userAddr1" value="${webVO.userAddr1}">
 			<input type="hidden" name="userAddr2" value="${webVO.userAddr2}">
 			<input type="hidden" name="userPhone" value="${webVO.userPhone}">

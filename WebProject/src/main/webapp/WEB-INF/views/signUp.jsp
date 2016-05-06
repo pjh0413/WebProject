@@ -28,8 +28,16 @@
 				<td><input type="text" name="userName" class="userName" size="10" maxlength="20"/><br/></td>
 			</tr>
 			<tr>
+				<td>성별</td>
+				<td>남자<input type="radio" name="userGender" value="남자"/>&nbsp;여자<input type="radio" name="userGender" value="여자"/></td>
+			</tr>
+			<tr>
 				<td>주소 : </td>
-				<td><input type="text" name="userAddr" class="userAddr" size="30" maxlength="50"/><br/></td>
+				<td><input type="text" name="userAddr1" size="20" maxlength="50"/><br/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="text" name="userAddr2" size="20" maxlength="50"/></td>
 			</tr>
 			<tr>
 				<td>전화번호 : </td>

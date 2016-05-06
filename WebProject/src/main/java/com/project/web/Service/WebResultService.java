@@ -26,6 +26,13 @@ public class WebResultService implements WebServiceImpl{
 		String userPhone = request.getParameter("userPhone");
 		String userEmail = request.getParameter("userEmail");
 		
+		if(userGender.equals("남자")){
+			userGender = "M";
+		}else{
+			userGender = "F";
+		}
+		
+		
 		WebDAO dao = new WebDAO();
 		dao.signUp(userId, userPwd, userName, userGender, userAddr1, userAddr2, userPhone, userEmail, regDate);
 	}
