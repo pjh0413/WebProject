@@ -17,21 +17,21 @@
 		<table>
 			<tr>
 				<td>아이디 : </td>
-				<td><input type="text" name="userId" class="userId" size="10" maxlength="16"/></td>
-				<td class="checkMsg">영문, 숫자 포함 6~16문자<br/></td>
+				<td><input type="text" name="userId" class="userId" size="14" maxlength="16"/></td>
+				<td class="checkMsg">※ 영문, 숫자 포함 6~16문자<br/></td>
 			</tr>
 			<tr>
 				<td>패스워드 : </td>
-				<td><input type="password" name="userPwd" class="userPwd" size="10" maxlength="18"/></td>
-				<td class="checkMsg">영문, 숫자 포함 6~18문자<br/></td>
+				<td><input type="password" name="userPwd" class="userPwd" size="14" maxlength="18"/></td>
+				<td class="checkMsg">※ 영문, 숫자 포함 6~18문자<br/></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="password" name="userPwd1" class="userPwd1" size="10" maxlength="18"/><br/></td>
+				<td><input type="password" name="userPwd1" class="userPwd1" size="14" maxlength="18"/><br/></td>
 			</tr>
 			<tr>
 				<td>이름 : </td>
-				<td><input type="text" name="userName" class="userName" size="10" maxlength="20"/><br/></td>
+				<td><input type="text" name="userName" class="userName" size="14" maxlength="20"/><br/></td>
 			</tr>
 			<tr>
 				<td>성별</td>
