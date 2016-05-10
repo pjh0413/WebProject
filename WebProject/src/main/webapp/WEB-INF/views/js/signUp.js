@@ -14,13 +14,8 @@ jQuery(function($){
 	var userPhone = $('.userPhone');
 	var userEmail = $('.userEmail');
 	
-	
 	$('.searchAddr').click(function(){
-		if(re_id.test(userId.val()) != true || re_pw.test(userPwd.val()) != true || re_pw.test(userPwd1.val()) != true || jQuery(userName).val() == null || jQuery(userName).val() == '') {
-			alert('상위 입력폼을 먼저 입력해 주세요.');
-		} else {
-			window.open('addrPopup', '_blank', 'width=730, height=750, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no');
-		}
+		window.open('addrPopup', '_blank', 'width=550, height=650, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no');
 	});
 	
 	form.submit(function(){
@@ -41,11 +36,11 @@ jQuery(function($){
 			alert('이름을 입력해 주세요.');
 			userName.focus();
 			return false;
-		} /*else if(jQuery(userAddr1).val() == null || jQuery(userAddr1).val() == '') {
+		} else if(jQuery(userAddr1).val() == null || jQuery(userAddr1).val() == '') {
 			alert('주소를 입력해 주세요.');
 			userAddr1.focus();
 			return false;
-		}*/ else if(jQuery(userAddr2).val() == null || jQuery(userAddr2).val() == '') {
+		} else if(jQuery(userAddr2).val() == null || jQuery(userAddr2).val() == '') {
 			alert('나머지 주소를 입력해 주세요.');
 			userAddr2.focus();
 			return false;

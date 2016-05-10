@@ -4,6 +4,14 @@
 	padding : 10px 0px 0px 35px;
 }
 
+#addrPopup {
+	position:absolute;
+    top:0;
+    left:0;
+    width:550px;
+    height:650px;
+}
+
 .sendBtn {
 	margin: 15px 0px 0px 0px;
 }

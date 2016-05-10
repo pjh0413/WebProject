@@ -39,12 +39,12 @@
 			</tr>
 			<tr>
 				<td>주소 : </td>
-				<td><input type="text" name="userAddr1" class="userAddr1" size="20" maxlength="50" readonly="readonly"/></td>
-				<td><button class="searchAddr">검색</button><br/></td>
+				<td><input type="text" name="userAddr1" class="userAddr1" size="30" maxlength="50" readonly="readonly"/></td>
+				<td><button type="button" class="searchAddr">검색</button><br/></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="text" name="userAddr2" class="userAddr2" size="20" maxlength="50"/></td>
+				<td><input type="text" name="userAddr2" class="userAddr2" size="30" maxlength="50"/></td>
 			</tr>
 			<tr>
 				<td>전화번호 : </td>
