@@ -39,7 +39,8 @@
 			</tr>
 			<tr>
 				<td>주소 : </td>
-				<td><input type="text" name="userAddr1" class="userAddr1" size="20" maxlength="50"/><br/></td>
+				<td><input type="text" name="userAddr1" class="userAddr1" size="20" maxlength="50" readonly="readonly"/></td>
+				<td><button class="searchAddr">검색</button><br/></td>
 			</tr>
 			<tr>
 				<td></td>

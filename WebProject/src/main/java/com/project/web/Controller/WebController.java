@@ -78,4 +78,9 @@ public class WebController {
 		return "/memberList";
 	}	
 	
+	@RequestMapping(value = "/addrPopup")
+	public String addrPopup(){
+		return "/addrPopup";
+	}
+	
 }
