@@ -6,8 +6,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link rel="stylesheet" type="text/css" href="css/addrPopup.css"/> 
 <title></title>
 </head>
 <body>
+	<div>
+		<p class="addrTitle" align="center">주소검색</p>
+	</div>
+	<div>
+		<p class="notice">※ 찾고자 하는 도로명주소 또는 건물명을 선택해주세요.</p>
+	</div>
+	<div class="checkBoxArea">
+		&nbsp;&nbsp;<input type="checkbox" name="checkForSearch1" class="checkForSearch"> 도로명주소 검색
+		<input type="checkbox" name="checkForSearch2" class="checkForSearch"> 건물명 검색
+	</div>
+	<!-- Before data binding. 그리드를 위한 임시 하드코딩. -->
+	<div class="selectBoxArea">
+		<div class="innerBox1">	
+		&nbsp;&nbsp;시/도&nbsp;&nbsp;&nbsp;&nbsp;<select class="selectBox1">
+				<option>서울특별시</option>
+				<option>경기도</option>
+		    </select>
+		&nbsp;&nbsp;&nbsp;시/군/구&nbsp;&nbsp;&nbsp;<select class="selectBox2">
+				<option>마포구</option>
+				<option>강남구</option>
+		    </select>
+		 </div>
+		 <div class="innerBox2">
+		    &nbsp;&nbsp;도로명&nbsp;&nbsp;<input type="text" name="roadName" class="roadName" size="16">
+		    &nbsp;&nbsp;&nbsp;건물번호&nbsp;&nbsp;<input type="text" name="buildingBonbun" class="buildingBonbun" size="5"> - 
+		    <input type="text" name="buildingBonbun" class="buildingBubun" size="5">
+		    <button type="button" class="searchBtn">검색</button>
+		 </div>
+	</div>
+	<div>
+		 <p class="notice">※ 해당되는 주소를 선택해주세요</p>
+	</div>
+	<div class="addressArea">
+		<table class="innerAddressTb">
+			<tr class="addrAreaTitle">
+				<td class="zipcodeTitle">우편번호</td>
+				<td class="addressTitle">주소</td>
+			</tr>
+			<tr class="addrAreaData">
+				<td>Data Binding Point</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<p class="notice">※ 상세주소 입력 후 '확인' 버튼을 눌러주세요</p>
+	</div>
+	<div class="addrLastArea">
+		<div class="roadNameAddr">
+		도로명주소<input type="text" name="addr1" class="addr1" value="03934"/><input type="text" name="addr2" class="addr2" value="서울특별시 마포구 성암로"/>
+		</div>
+		<div class="detailAddr">
+		상세주소입력<input type="text" name="addr3" class="addr3"/><input type="text" name="addr4" class="addr4" value="(성산제2동,남양빌라)"/>
+		</div>
+	</div>
 </body>
 </html>

@@ -15,7 +15,7 @@ jQuery(function($){
 	var userEmail = $('.userEmail');
 	
 	$('.searchAddr').click(function(){
-		window.open('addrPopup', '_blank', 'width=550, height=650, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no');
+		window.open('addrPopup', '_blank', 'width=650, height=750, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no');
 	});
 	
 	form.submit(function(){
