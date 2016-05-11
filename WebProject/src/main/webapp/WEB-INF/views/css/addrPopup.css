@@ -2,7 +2,7 @@
 
 .addrTitle {
 	background-color: #2C6F91;
-	color: white;
+	color: #FFFFFF;
 	font-size: 20px;
 	font-weight : bold;
 	width: 600px;
@@ -43,12 +43,16 @@
 	margin : 10px 0px 0px 0px;
 }
 
-.innerBox2 { 
-	margin : 10px 0px 0px 0px;
+#innerBox2 { 
+	margin : 10px 0px 0px 2px;
+}
+
+#innerBox3 {
+	margin : 10px 0px 0px 14px;
 }
 
 .selectBox1 {
-	width : 140px;
+	width : 142px;
 	height : 30px;
 	font-size : 18px;
 }
@@ -78,14 +82,21 @@
 	font-size: 15px;	
 }
 
+.buildingName {
+	width : 400px;
+	height : 20px;
+	font-size: 15px;
+	margin : 0px 0px 0px 3px;
+}
+
 .searchBtn {
 	margin : 0px 0px 0px 20px;
 	width : 70px;
 	height : 30px;
 	background-color: #2C6F91;
 	font-size : 15px;
-	font-weight : bold;
-	color: white;
+/* 	font-weight : bold; */
+	color: #FFFFFF;
 }
 
 .addressArea {
@@ -170,4 +181,17 @@
 	font-size : 16px;
 	background-color: #DEEBF7;
 	margin : 0px 0px 0px 0px;
+}
+
+.saveBtnArea {
+	margin : 15px 0px 0px 290px;
+}
+
+.saveBtn {
+	width : 60px;
+	height : 30px;
+	color : #FFFFFF;
+	font-size : 15px;
+	/* font-weight : bold;  */
+	background-color: #2C6F91; 
 }
