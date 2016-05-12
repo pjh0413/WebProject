@@ -34,6 +34,12 @@ public class WebController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/idCheck")
+	public String idCheck(){
+
+		return "/idCheck";
+	}
+	
 	@RequestMapping(value = "/signUp")
 	public String signUp() {	
 		

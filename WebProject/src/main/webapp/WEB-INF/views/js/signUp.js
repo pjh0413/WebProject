@@ -1,8 +1,8 @@
 jQuery(function($){
-	var re_id = /^[a-z0-9_-]{6,16}$/; // 아이디 검사식
-	var re_pw = /^[a-z0-9_-]{6,18}$/; // 비밀번호 검사식
-	var re_email = /^([\w\.-]+)@([a-z\d\.-]+)\.([a-z\.]{2,6})$/; // 이메일 검사식
-	/*var re_phone = /^[0-9]{8,11}$/; // 전화번호 검사식*/	
+	var re_id = /^.*(?=.{6,16})(?=.*[0-9])(?=.*[a-zA-Z]).*$/i;	//아이디 영문,숫자 조합 6~16자리 체크
+	var re_id1 = /[!,@,#,$,%,^,&,*,?,_,~]/gi;	//아이디 특수 문자 불가
+	var re_pw = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/gi;	//비밀번호 영문,특수문자 조합
+	var re_email = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i; // 이메일 검사식
 	var form = $('.frm');
 	var userId = $('.userId');
 	var userPwd = $('.userPwd');
@@ -14,22 +14,54 @@ jQuery(function($){
 	var userPhone = $('.userPhone');
 	var userEmail = $('.userEmail');
 	
+	
+	$('#userId').blur(function(){
+		$.ajax({
+			type : "POST",
+			url : "idCheck",
+			data : {
+				"userId" : $('#userId').val()
+			}, 
+			success : function(data){
+				if($.trim(data) == "YES"){
+					if($('#userId').val().length < 6){
+						$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디는 반드시 6자리 이상이여야 합니다.</b>');
+					}else if(re_id.test(userId.val()) != true){
+						$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디는 영문,숫자 조합 6자리 이상이여야 합니다.</b>');
+					}else if(re_id1.test(userId.val()) == true){
+						$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디에는 특수 문자가 허용되지 않습니다.</b>');
+					}else{
+						$('#idChkMsg').html('<b style="font-size:11px;color:blue">입력하신 아이디는 사용 가능합니다.</b>');
+					}	
+				}else if($.trim(data) == "NO"){
+					$('#idChkMsg').html('<b style="font-size:11px;color:red">이미 존재하는 아이디 입니다.</b>');	
+				}else{
+					$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디가 입력되지 않았습니다.</b>');
+				}
+			}
+		});
+	});
+	
 	$('.searchAddr').click(function(){
 		window.open('addrPopup', '_blank', 'width=650, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no');
 	});
 	
 	form.submit(function(){
-		
 		if(re_id.test(userId.val()) != true) {
-			alert('아이디를 입력하지 않았거나,\n유효하지 않은 ID를 입력 하였습니다.');
+			alert('다시 한 번 아이디를 확인 하여 주시기 바랍니다.');
 			userId.focus();
 			return false;
-		} else if(re_pw.test(userPwd.val()) != true) {
-			alert('패스워드를 입력하지 않았거나,\n유효하지 않은 패스워드를 입력 하였습니다.');
+		} else if(re_id1.test(userId.val()) == true) {
+			alert('아이디에는 특수문자가 허용되지 않습니다.');
+			userId.focus();
+			return false;
+		}
+		  else if(re_pw.test(userPwd.val()) != true) {
+			alert('비밀번호를 6자리 이상 영문, 숫자, 특수문자 \n조합으로 입력 하셔야 합니다.');
 			userPwd.focus();
 			return false;
 		} else if(jQuery(userPwd1).val() != jQuery(userPwd).val()) {
-			alert('패스워드가 같지 않습니다. 다시 확인해 주세요.');
+			alert('비밀번호가 같지 않습니다. 다시 확인 하여 주십시요.');
 			userPwd1.focus();
 			return false;
 		} else if(jQuery(userName).val() == null || jQuery(userName).val() == '') {
