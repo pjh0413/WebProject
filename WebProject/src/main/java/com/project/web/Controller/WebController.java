@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.project.web.Service.WebAddrPopupService;
 import com.project.web.Service.WebMemberListService;
 import com.project.web.Service.WebResultService;
 import com.project.web.Service.WebServiceImpl;
@@ -85,8 +86,20 @@ public class WebController {
 	}	
 	
 	@RequestMapping(value = "/addrPopup")
-	public String addrPopup(){
+	public String addrPopup(Model model){
+		System.out.println("addrPopup()");
+
 		return "/addrPopup";
+	}
+	
+	@RequestMapping(value = "/resultAddr")
+	public String resultAddr(Model model){
+		System.out.println("resultAddr()");
+		
+		serviceImpl = new WebAddrPopupService();
+		serviceImpl.execute(model);
+		
+		return "/resultAddr";
 	}
 	
 }

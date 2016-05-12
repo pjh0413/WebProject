@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 
 import com.project.web.Util.Constant;
+import com.project.web.VO.WebAddrVO;
 import com.project.web.VO.WebVO;
 
 public class WebDAO {
@@ -65,5 +66,12 @@ public class WebDAO {
 			result = true;
 		}
 		return result;
+	}
+	
+	public ArrayList<WebAddrVO> searchAddr(final String sido_name, final String sigungu_name, final String road_name){
+		String query = "select sido_name, sigungu_name, road_name, building_bonbun, building_bubun, zipcode, sigungu_building_name from BUILDING_INFO where sido_name = ? AND sigungu_name = ? AND road_name = ?";
+		/*String query = "select sidoName, sigunguName, roadName, buildingBonbun, buildingBubun, zipcode, sigunguBuildingName from BUILDING_INFO where sidoName = ? AND sigunguName = ? AND roadName = ?";*/
+		/*String query = "select sidoName, sigunguName, roadName, buildingBonbun, buildingBubun, zipcode, sigunguBuildingName from BUILDING_INFO";*/
+		return (ArrayList<WebAddrVO>) template.query(query, new BeanPropertyRowMapper<WebAddrVO>(WebAddrVO.class));
 	}
 }
