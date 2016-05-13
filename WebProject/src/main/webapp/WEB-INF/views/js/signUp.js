@@ -1,6 +1,6 @@
 jQuery(function($){
 	var re_id = /^.*(?=.{6,16})(?=.*[0-9])(?=.*[a-zA-Z]).*$/i;	//아이디 영문,숫자 조합 6~16자리 체크
-	var re_id1 = /[!,@,#,$,%,^,&,*,?,_,~]/gi;	//아이디 특수 문자 불가
+	var re_id1 = /[\s,!,@,#,$,%,^,&,*,?,_,~]/gi;	//아이디 특수 문자 불가
 	var re_pw = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9])/gi;	//비밀번호 영문,특수문자 조합
 	var re_email = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i; // 이메일 검사식
 	var form = $('.frm');
@@ -27,9 +27,9 @@ jQuery(function($){
 					if($('#userId').val().length < 6){
 						$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디는 반드시 6자리 이상이여야 합니다.</b>');
 					}else if(re_id.test(userId.val()) != true){
-						$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디는 영문,숫자 조합 6자리 이상이여야 합니다.</b>');
+						$('#idChkMsg').html('<b style="font-size:11px;color:red">영문,숫자 조합 6자리 이상이여야 합니다.</b>');
 					}else if(re_id1.test(userId.val()) == true){
-						$('#idChkMsg').html('<b style="font-size:11px;color:red">아이디에는 특수 문자가 허용되지 않습니다.</b>');
+						$('#idChkMsg').html('<b style="font-size:11px;color:red">특수 문자 및 공백은 허용되지 않습니다.</b>');
 					}else{
 						$('#idChkMsg').html('<b style="font-size:11px;color:blue">입력하신 아이디는 사용 가능합니다.</b>');
 					}	
@@ -81,7 +81,7 @@ jQuery(function($){
 			userPhone.focus();
 			return false;
 		} else if(re_email.test(userEmail.val()) != true) {
-			alert('이메일을 입력하지 않았거나,\n유효한 않은 이메일주소를 입력 하였습니다.');
+			alert('이메일 주소가 올바르지 않습니다.');
 			userEmail.focus();
 			return false;
 		}
